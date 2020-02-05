@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="thrid">
+      <UniqueIdentifier>{f459c4ac-3f6c-4fcf-bf80-996d0b27c5a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thrid\rapidjson">
+      <UniqueIdentifier>{dc4e7791-c8c5-4518-adbe-e4829fbc75da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thrid\rapidjson\error">
+      <UniqueIdentifier>{353cb39f-a028-49a2-8cb2-b72f6353c4b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thrid\rapidjson\internal">
+      <UniqueIdentifier>{b752bc3c-fdd7-4aee-ac0b-9dec45c5e20e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thrid\rapidjson\msinttypes">
+      <UniqueIdentifier>{de2d2e01-4b1f-49f2-98aa-f39b1de3244c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thrid\rapidxml">
+      <UniqueIdentifier>{21afcefb-9f70-46af-a7a2-a0a73dc28a76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thrid\detail">
+      <UniqueIdentifier>{75fae2aa-a52b-4911-af65-22bc4708b14b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+    <Text Include="include\rapidxml\license.txt">
+      <Filter>thrid\rapidxml</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidxml\rapidxml.hpp">
+      <Filter>thrid\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidxml\rapidxml_iterators.hpp">
+      <Filter>thrid\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidxml\rapidxml_print.hpp">
+      <Filter>thrid\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidxml\rapidxml_utils.hpp">
+      <Filter>thrid\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\allocators.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\document.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\encodedstream.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\encodings.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\filereadstream.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\filewritestream.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\fwd.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\istreamwrapper.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\memorybuffer.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\memorystream.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\ostreamwrapper.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\pointer.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\prettywriter.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\rapidjson.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\reader.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\schema.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\stream.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\stringbuffer.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\writer.h">
+      <Filter>thrid\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\msinttypes\inttypes.h">
+      <Filter>thrid\rapidjson\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\msinttypes\stdint.h">
+      <Filter>thrid\rapidjson\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\biginteger.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\diyfp.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\dtoa.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\ieee754.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\itoa.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\meta.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\pow10.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\regex.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\stack.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\strfunc.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\strtod.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\internal\swap.h">
+      <Filter>thrid\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\error\en.h">
+      <Filter>thrid\rapidjson\error</Filter>
+    </ClInclude>
+    <ClInclude Include="include\rapidjson\error\error.h">
+      <Filter>thrid\rapidjson\error</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\attribute.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\char_ref.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\error.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\gumbo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\insertion_mode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\parser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\string_buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\string_piece.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\tag_enum.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\tag_gperf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\tag_sizes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\tag_strings.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\token_type.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\tokenizer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\tokenizer_states.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\utf8.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\vector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\CParser.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\Document.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\Node.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\Object.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\QueryUtil.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\Selection.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="gumbo-parser\Selector.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="enumtest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="emuntest2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\attribute.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\char_ref.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\error.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\parser.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\string_buffer.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\string_piece.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\tag.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\tokenizer.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\utf8.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\util.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\vector.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\CParser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\Document.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\Node.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\Object.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\QueryUtil.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\Selection.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="gumbo-parser\Selector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\rapidxml\manual.html">
+      <Filter>thrid\rapidxml</Filter>
+    </None>
+  </ItemGroup>
+</Project>
