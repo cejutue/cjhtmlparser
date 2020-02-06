@@ -1,8 +1,15 @@
 # cjhtmlparser
-htmlparser on  windows  and  linux 
+html parser on  windows  and  linux 
 
-»ùÓÚgumbo-parser ºÍgumbo-query ¸ÄÔì³ÉÎªÁË ¿ÉÒÔÊÊÓÃ WindowsºÍLinuxµÄ html½âÎö¿â
-»ù±¾ÓÃ·¨ÈçÏÂ:
+åŸºäºgumbo-parser å’Œgumbo-query æ”¹é€ æˆä¸ºäº† å¯ä»¥é€‚ç”¨ Windowså’ŒLinuxçš„ htmlè§£æåº“
+
+ç¼–è¯‘: gumbo-parser æ‰€æœ‰æ–‡ä»¶å…¨éƒ¨ç›´æ¥åŠ å…¥åˆ°å·¥ç¨‹ç›´æ¥ç¼–è¯‘å³å¯
+
+åŸºæœ¬ç”¨æ³•å¦‚ä¸‹:
+
+
+
+```
 #pragma once
 #include "stdafx.h"
 
@@ -24,6 +31,7 @@ void test_parser() {
 	printf("Node: %s\n", node.text().c_str());
 	std::string content = page.substr(node.startPos(), node.endPos() - node.startPos());
 	printf("Node: %s\n", content.c_str());
+
 }
 
 void test_html() {
@@ -49,3 +57,5 @@ int main() {
 	test_html();
 	test_escape();
 }
+```
+
