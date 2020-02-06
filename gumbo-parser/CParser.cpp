@@ -402,7 +402,7 @@ CSelector* CParser::parsePseudoclassSelector()
 			throw error("expected ')' but didn't find it");
 		}
 
-		CUnarySelector::UTOperator op;
+		CUnarySelector::TOperator op;
 		if (name == "not")
 		{
 			op = CUnarySelector::ENot;
@@ -449,7 +449,7 @@ CSelector* CParser::parsePseudoclassSelector()
 			throw error("expected ')' but didn't find it");
 		}
 
-		CTextSelector::TTOperator op;
+		CTextSelector::TOperator op;
 		if (name == "contains")
 		{
 			op = CTextSelector::EContains;
@@ -590,7 +590,7 @@ CSelector* CParser::parseAttributeSelector()
 	}
 	mOffset++;
 
-	CAttributeSelector::ATOperator aop;
+	CAttributeSelector::TOperator aop;
 	if (op == "=")
 	{
 		aop = CAttributeSelector::EEquals;

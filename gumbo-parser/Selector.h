@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
  * 
  * $Id$
  * 
@@ -25,7 +25,7 @@ class CSelector: public CObject
 {
 
 	public:
-		typedef enum   TOperator
+		typedef enum 
 		{
 			//
 			EDummy,
@@ -40,7 +40,7 @@ class CSelector: public CObject
 		} TOperator;
 	public:
 
-		CSelector(TOperator aOp = TOperator::EDummy)
+		CSelector(CSelector::TOperator aOp = EDummy)
 		{
 			init();
 			mOp = aOp;
@@ -49,14 +49,14 @@ class CSelector: public CObject
 		CSelector(bool aOfType)
 		{
 			init();
-			mOp = TOperator::EOnlyChild;
+			mOp = EOnlyChild;
 			mOfType = aOfType;
 		}
 
 		CSelector(unsigned int aA, unsigned int aB, bool aLast, bool aOfType)
 		{
 			init();
-			mOp = TOperator::ENthChild;
+			mOp = ENthChild;
 			mA = aA;
 			mB = aB;
 			mLast = aLast;
@@ -66,7 +66,7 @@ class CSelector: public CObject
 		CSelector(GumboTag aTag)
 		{
 			init();
-			mOp = TOperator::ETag;
+			mOp = ETag;
 			mTag = aTag;
 		}
 
@@ -97,7 +97,7 @@ class CSelector: public CObject
 
 	private:
 
-		TOperator mOp;
+		CSelector::TOperator mOp;
 
 		bool mOfType;
 
@@ -113,7 +113,7 @@ class CSelector: public CObject
 class CUnarySelector: public CSelector
 {
 	public:
-		typedef enum  UTOperator
+		typedef enum 
 		{
 			//
 			ENot,
@@ -121,11 +121,11 @@ class CUnarySelector: public CSelector
 			EHasDescendant,
 			//
 			EHasChild,
-		} UTOperator;
+		} TOperator;
 
 	public:
 
-		CUnarySelector(UTOperator aOp, CSelector* apS);
+		CUnarySelector(CUnarySelector::TOperator aOp, CSelector* apS);
 
 		virtual ~CUnarySelector();
 
@@ -143,29 +143,29 @@ class CUnarySelector: public CSelector
 
 		CSelector* mpS;
 
-		UTOperator mOp;
+		CUnarySelector::TOperator m_Op;
 };
 
 class CBinarySelector: public CSelector
 {
 	public:
-		typedef enum  BTOperator
+		 typedef  enum
 		{
 			// || 操作符
-			EUnion,
+			EUnion = 0,
 			// && 操作符
-			EIntersection,
+			EIntersection = 1,
 			//
-			EChild,
+			EChild =2,
 			//
-			EDescendant,
+			EDescendant =3,
 			//
-			EAdjacent,
-		} BTOperator;
+			EAdjacent =4,
+		} TOperator;
 		//using namespace CBinarySelector;
 	public:
 
-		CBinarySelector(CBinarySelector::BTOperator aOp, CSelector* apS1, CSelector* apS2);
+		CBinarySelector(CBinarySelector::TOperator aOp, CSelector* apS1, CSelector* apS2);
 
 		CBinarySelector(CSelector* apS1, CSelector* apS2, bool aAdjacent);
 
@@ -181,7 +181,7 @@ class CBinarySelector: public CSelector
 
 		CSelector* mpS2;
 
-		BTOperator mOp;
+		TOperator m_Op;
 
 		bool mAdjacent;
 };
@@ -189,7 +189,7 @@ class CBinarySelector: public CSelector
 class CAttributeSelector: public CSelector
 {
 	public:
-		typedef enum  ATOperator
+		typedef enum 
 		{
 			/**
 			 * 是否存在
@@ -219,11 +219,11 @@ class CAttributeSelector: public CSelector
 			 * 是否子串
 			 */
 			ESubString,
-		} ATOperator;
+		}TOperator;
 
 	public:
 
-		CAttributeSelector(ATOperator aOp, std::string aKey, std::string aValue = "");
+		CAttributeSelector(CAttributeSelector::TOperator aOp, std::string aKey, std::string aValue = "");
 
 	public:
 
@@ -235,25 +235,25 @@ class CAttributeSelector: public CSelector
 
 		std::string mValue;
 
-		ATOperator mOp;
+		CAttributeSelector::TOperator m_Op;
 };
 
 class CTextSelector: public CSelector
 {
 	public:
-		typedef enum  TTOperator
+		typedef enum 
 		{
 			//
 			EOwnContains,
 			//
 			EContains,
-		} TTOperator;
+		} TOperator;
 
 	public:
-		CTextSelector(TTOperator aOp, std::string aValue)
+		CTextSelector(CTextSelector::TOperator aOp, std::string aValue)
 		{
 			mValue = aValue;
-			mOp = aOp;
+			this->m_Op = aOp;
 		}
 
 		~CTextSelector()
@@ -270,7 +270,7 @@ class CTextSelector: public CSelector
 
 		std::string mValue;
 
-		TTOperator mOp;
+		CTextSelector::TOperator m_Op;
 };
 
 #endif /* SELECTOR_H_ */

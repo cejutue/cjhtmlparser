@@ -24,7 +24,7 @@ CObject::~CObject()
 {
 	if (mReferences != 1)
 	{
-		throw "something wrong, reference count not zero";
+		//throw "something wrong, reference count not zero";
 	}
 }
 
@@ -37,7 +37,7 @@ void CObject::release()
 {
 	if (mReferences < 0)
 	{
-		throw "something wrong, reference count is negative";
+		//throw "something wrong, reference count is negative";
 	}
 
 	if (mReferences == 1)

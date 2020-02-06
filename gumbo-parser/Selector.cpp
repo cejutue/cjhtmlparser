@@ -20,9 +20,9 @@ bool CSelector::match(GumboNode* apNode)
 {
 	switch (mOp)
 	{
-		case TOperator::EDummy:
+		case EDummy:
 			return true;
-		case TOperator::EEmpty:
+		case EEmpty:
 		{
 			if (apNode->type != GUMBO_NODE_ELEMENT)
 			{
@@ -39,7 +39,7 @@ bool CSelector::match(GumboNode* apNode)
 			}
 			return true;
 		}
-		case TOperator::EOnlyChild:
+		case EOnlyChild:
 		{
 			if (apNode->type != GUMBO_NODE_ELEMENT)
 			{
@@ -69,7 +69,7 @@ bool CSelector::match(GumboNode* apNode)
 
 			return count == 1;
 		}
-		case TOperator::ENthChild:
+		case ENthChild:
 		{
 			if (apNode->type != GUMBO_NODE_ELEMENT)
 			{
@@ -115,7 +115,7 @@ bool CSelector::match(GumboNode* apNode)
 
 			return i % mA == 0 && i / mA > 0;
 		}
-		case TOperator::ETag:
+		case ETag:
 			return apNode->type == GUMBO_NODE_ELEMENT && apNode->v.element.tag == mTag;
 		default:
 			return false;
@@ -162,13 +162,13 @@ void CSelector::matchAllInto(GumboNode* apNode, std::vector<GumboNode*>& nodes)
 	}
 }
 
-CBinarySelector::CBinarySelector(BTOperator aOp, CSelector* apS1, CSelector* apS2)
+CBinarySelector::CBinarySelector(CBinarySelector::TOperator aOp, CSelector* apS1, CSelector* apS2)
 {
 	mpS1 = apS1;
 	mpS1->retain();
 	mpS2 = apS2;
 	mpS2->retain();
-	mOp = aOp;
+	this->m_Op = aOp;
 	mAdjacent = false;
 }
 
@@ -193,13 +193,13 @@ CBinarySelector::CBinarySelector(CSelector* apS1, CSelector* apS2, bool aAdjacen
 	mpS1->retain();
 	mpS2 = apS2;
 	mpS2->retain();
-	mOp = CBinarySelector::EAdjacent;
+	m_Op = EAdjacent;
 	mAdjacent = aAdjacent;
 }
 
 bool CBinarySelector::match(GumboNode* apNode)
 {
-	switch (mOp)
+	switch (m_Op)
 	{
 	case CBinarySelector::EUnion:
 			return mpS1->match(apNode) || mpS2->match(apNode);
@@ -223,7 +223,7 @@ bool CBinarySelector::match(GumboNode* apNode)
 			}
 			return false;
 		}
-	case CBinarySelector::EAdjacent:
+	case EAdjacent:
 		{
 			if (!mpS2->match(apNode))
 			{
@@ -269,11 +269,11 @@ bool CBinarySelector::match(GumboNode* apNode)
 	return false;
 }
 
-CAttributeSelector::CAttributeSelector(ATOperator aOp, std::string aKey, std::string aValue)
+CAttributeSelector::CAttributeSelector(TOperator aOp, std::string aKey, std::string aValue)
 {
 	mKey = aKey;
 	mValue = aValue;
-	mOp = aOp;
+	m_Op = aOp;
 }
 
 bool CAttributeSelector::match(GumboNode* apNode)
@@ -293,13 +293,13 @@ bool CAttributeSelector::match(GumboNode* apNode)
 		}
 
 		std::string value = attr->value;
-		switch (mOp)
+		switch (m_Op)
 		{
-			case CAttributeSelector::EExists:
+			case EExists:
 				return true;
-			case CAttributeSelector::EEquals:
+			case EEquals:
 				return mValue == value;
-			case CAttributeSelector::EIncludes:
+			case EIncludes:
 				for (unsigned int i = 0, j = 0; i < value.size(); i++)
 				{
 					if (value[i] == ' ' || value[i] == '\t' || value[i] == '\r' || value[i] == '\n'
@@ -319,7 +319,7 @@ bool CAttributeSelector::match(GumboNode* apNode)
 					}
 				}
 				return false;
-			case CAttributeSelector::EDashMatch:
+			case EDashMatch:
 				if (mValue == value)
 				{
 					return true;
@@ -329,12 +329,12 @@ bool CAttributeSelector::match(GumboNode* apNode)
 					return false;
 				}
 				return value.substr(0, mValue.size()) == mValue && value[mValue.size()] == '-';
-			case CAttributeSelector::EPrefix:
+			case EPrefix:
 				return value.size() >= mValue.size() && value.substr(0, mValue.size()) == mValue;
-			case CAttributeSelector::ESuffix:
+			case ESuffix:
 				return value.size() >= mValue.size()
 						&& value.substr(value.size() - mValue.size(), mValue.size()) == mValue;
-			case CAttributeSelector::ESubString:
+			case ESubString:
 				return value.find(mValue) != std::string::npos;
 			default:
 				return false;
@@ -343,11 +343,11 @@ bool CAttributeSelector::match(GumboNode* apNode)
 	return false;
 }
 
-CUnarySelector::CUnarySelector(UTOperator aOp, CSelector* apS)
+CUnarySelector::CUnarySelector(TOperator aOp, CSelector* apS)
 {
 	mpS = apS;
 	mpS->retain();
-	mOp = aOp;
+	m_Op = aOp;
 }
 
 CUnarySelector::~CUnarySelector()
@@ -388,17 +388,17 @@ bool CUnarySelector::hasChildMatch(GumboNode* apNode, CSelector* apS)
 
 bool CUnarySelector::match(GumboNode* apNode)
 {
-	switch (mOp)
+	switch (m_Op)
 	{
-		case CUnarySelector::ENot:
+		case ENot:
 			return !mpS->match(apNode);
-		case CUnarySelector::EHasDescendant:
+		case EHasDescendant:
 			if (apNode->type != GUMBO_NODE_ELEMENT)
 			{
 				return false;
 			}
 			return hasDescendantMatch(apNode, mpS);
-		case CUnarySelector::EHasChild:
+		case EHasChild:
 			if (apNode->type != GUMBO_NODE_ELEMENT)
 			{
 				return false;
@@ -412,12 +412,12 @@ bool CUnarySelector::match(GumboNode* apNode)
 bool CTextSelector::match(GumboNode* apNode)
 {
 	std::string text;
-	switch (mOp)
+	switch (m_Op)
 	{
-		case CTextSelector::EContains:
+		case EContains:
 			text = CQueryUtil::nodeText(apNode);
 			break;
-		case CTextSelector::EOwnContains:
+		case EOwnContains:
 			text = CQueryUtil::nodeOwnText(apNode);
 			break;
 		default:

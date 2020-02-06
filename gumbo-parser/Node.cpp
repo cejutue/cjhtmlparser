@@ -16,6 +16,7 @@
 #include "Node.h"
 #include "Selection.h"
 #include "QueryUtil.h"
+
 CNode::CNode(GumboNode* apNode)
 {
 	mpNode = apNode;

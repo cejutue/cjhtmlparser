@@ -17,6 +17,7 @@
 #include "CParser.h"
 #include "QueryUtil.h"
 #include "Node.h"
+
 CSelection::CSelection(GumboNode* apNode)
 {
 	mNodes.push_back(apNode);
