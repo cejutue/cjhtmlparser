@@ -3,10 +3,9 @@ html parser on  windows  and  linux
 
 基于gumbo-parser 和gumbo-query 改造成为了 可以适用 Windows和Linux的 html解析库
 
-编译: gumbo-parser 所有文件全部直接加入到工程直接编译即可
+编译:将所有文件全部直接加入到工程直接编译即可
 
 基本用法如下:
-
 
 
 ```
